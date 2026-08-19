@@ -1,0 +1,47 @@
+name: notlar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notlar/**'
+      - '.github/scripts/notlar.py'
+      - '.github/workflows/notlar.yml'
+  schedule:
+    # Her gun 03:17 UTC — 30 gunu dolan notlari temizler.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notlar
+  cancel-in-progress: false
+
+jobs:
+  derle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Notun eklendigi commit tarihini okuyabilmek icin tam gecmis gerekli.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: python .github/scripts/notlar.py
+
+      - name: degisiklikleri isle
+        run: |
+          if [ -z "$(git status --porcelain -- notlar)" ]; then
+            echo "degisiklik yok"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- notlar
+          git commit -m "notlar: derle ve eskileri temizle"
+          git push

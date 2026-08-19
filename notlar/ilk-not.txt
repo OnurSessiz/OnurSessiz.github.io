@@ -1,0 +1,5 @@
+Notlar bölümü açıldı. Buraya notepad ile yazdığım kısa notları atıyorum,
+kartlar yana kaydırmalı şekilde diziliyor.
+
+Her not en fazla 512 karakter, 30 gün sonra kendiliğinden siliniyor.
+Bu notu silebilirsin, örnek olsun diye duruyor.
