@@ -1,29 +1,11 @@
 {
-  "generated": "2026-08-19T15:24:15.290241+00:00",
+  "generated": "2026-08-19T15:26:21.954588+00:00",
   "notes": [
     {
-      "id": "ilk-not",
-      "title": "ilk not",
-      "date": "2026-08-19T15:23:53+00:00",
-      "text": "Notlar bölümü açıldı. Buraya notepad ile yazdığım kısa notları atıyorum,\nkartlar yana kaydırmalı şekilde diziliyor.\n\nHer not en fazla 512 karakter, 30 gün sonra kendiliğinden siliniyor.\nBu notu silebilirsin, örnek olsun diye duruyor."
-    },
-    {
-      "id": "2026-08-18-kisa",
-      "title": "kisa",
-      "date": "2026-08-18T00:00:00+00:00",
-      "text": "Kısa bir not."
-    },
-    {
-      "id": "2026-08-14-catwando",
-      "title": "catwando",
-      "date": "2026-08-14T00:00:00+00:00",
-      "text": "Dün CatWando için yeni bir saldırı animasyonu bitirdim. Blender tarafı beklediğimden uzun sürdü ama sonuç iyi oldu.\n\nSıradaki iş: ses efektleri."
-    },
-    {
-      "id": "2026-07-30-uzun",
-      "title": "uzun",
-      "date": "2026-07-30T00:00:00+00:00",
-      "text": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA cok uzun bir not BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB…"
+      "id": "selamlama",
+      "title": "selamlama",
+      "date": "2026-08-19T15:25:48+00:00",
+      "text": "Bu benim ilk notumm!!! Heyecanlandım bakalım sistem çalışıyor mu :)"
     }
   ]
 }
