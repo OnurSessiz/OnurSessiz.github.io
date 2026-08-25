@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Onur Sessiz</title>
-<meta name="description" content="Onur Sessiz — oyunlar, Minecraft pluginleri ve notlar.">
+<meta name="description" content="Onur Sessiz — developer working across software, AI and 3D game development. Projects, notes and contact.">
 <meta name="theme-color" content="#f2edfb">
 <link rel="canonical" href="https://onursessiz.github.io/">
 <link rel="icon" href="assets/img/profil.webp" type="image/webp">
 
 <meta property="og:type" content="website">
-<meta property="og:locale" content="tr_TR">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="Onur Sessiz">
-<meta property="og:description" content="Oyunlar, Minecraft pluginleri ve notlar.">
+<meta property="og:description" content="Software, AI and 3D game development — projects, notes and contact.">
 <meta property="og:url" content="https://onursessiz.github.io/">
 <meta property="og:image" content="https://onursessiz.github.io/assets/img/afis.webp">
 <meta name="twitter:card" content="summary_large_image">
@@ -208,6 +208,8 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--dim); text-transform: none; letter-spacing: 0;
   transition: color var(--t-uzeri) ease;
 }
+/* Henuz yayinda olmayan hesap: pil gorunumu ayni, ama tiklanmiyor. */
+.pil-pasif { color: var(--dim); box-shadow: 4px 4px 0 var(--dim); cursor: default; }
 
 /* ── bolum basliklari ──────────────────────────────────────────────── */
 .ayrac {
@@ -478,15 +480,15 @@ html:has(.modal[open]) { overflow: hidden; }
 /* Hover sadece gercek isaretcilerde: dokunmatikte tap sonrasi
    kartin hover'da asili kalmasini onler. */
 @media (hover: hover) and (pointer: fine) {
-  .pil:hover, .dugme:hover, .modal-kapat:hover { background: var(--accent); color: var(--card); }
-  .pil:hover .kullanici { color: rgba(255,253,247,.85); }
+  .pil:not(.pil-pasif):hover, .dugme:hover, .modal-kapat:hover { background: var(--accent); color: var(--card); }
+  .pil:not(.pil-pasif):hover .kullanici { color: rgba(255,253,247,.85); }
   .proje:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--accent); }
   a:hover { color: var(--teal); }
 }
 
 /* Basma geri bildirimi: sert golgeli bu dilde "iceri bastirma"
    scale(0.97)'den daha dogru bir fizik. */
-.pil:active, .dugme:active, .modal-kapat:active {
+.pil:not(.pil-pasif):active, .dugme:active, .modal-kapat:active {
   transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--hat);
 }
 .proje:has(.proje-ac:active) { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--hat); }
@@ -534,33 +536,35 @@ html:has(.modal[open]) { overflow: hidden; }
       <div class="afis">
         <div class="afis-ray" id="afis-ray">
           <div class="afis-kare">
-            <img src="assets/img/afis.webp" alt="Pixel art afiş: oyun karakterleri ve kodlama sahnesi" width="1200" height="1200" fetchpriority="high" decoding="async">
+            <img src="assets/img/afis.webp" alt="Pixel art banner: game characters alongside a coding scene" width="1200" height="1200" fetchpriority="high" decoding="async">
           </div>
           <div class="afis-kare">
-            <img src="assets/img/afis-2.webp" alt="Pixel art afiş: sunucu odasında kod yazan geliştirici" width="1600" height="679" fetchpriority="low" decoding="async">
+            <img src="assets/img/afis-2.webp" alt="Pixel art banner: a developer writing code in a server room" width="1600" height="679" fetchpriority="low" decoding="async">
           </div>
         </div>
         <div class="afis-noktalar" id="afis-noktalar"></div>
       </div>
       <div class="profil">
-        <img src="assets/img/profil.webp" alt="Onur Sessiz'in pixel art profil görseli" width="284" height="284" decoding="async">
+        <img src="assets/img/profil.webp" alt="Pixel art portrait of Onur Sessiz" width="284" height="284" decoding="async">
       </div>
     </div>
 
     <div class="hero">
       <div class="hero-metin">
-        <p class="ustyazi">yazılım · yapay zeka · 3d &amp; oyun geliştirme</p>
+        <p class="ustyazi">software · artificial intelligence · 3d &amp; game development</p>
         <h1>Onur Sessiz</h1>
-        <p class="giris">2007 doğumlu bir geliştiriciyim. Yazılım ve yapay zeka üzerine çalışıyor, bu bilgiyi oyun geliştirmeye taşımak için 3D modelleme ve animasyon alanlarında kendimi geliştiriyorum. Şu anda aktif olarak oyun projeleri ve Minecraft plugin geliştirme ile ilgileniyorum. Yıllarca lisanslı voleybol oynadım; artık sahaya sadece hobi olarak çıkıyorum.</p>
+        <p class="giris">I am a developer, born in 2007. My work centres on software and artificial intelligence, and I am building up my 3D modelling and animation skills so I can carry that knowledge into game development. Right now my focus is on game projects and Minecraft plugin development. I played licensed volleyball for years; these days I still step onto the court, but purely for the love of it.</p>
       </div>
-      <p class="rozet"><span class="nabiz" aria-hidden="true"></span>yeni projelere açık</p>
+      <p class="rozet"><span class="nabiz" aria-hidden="true"></span>open to new projects</p>
     </div>
 
-    <nav class="sosyal" aria-label="Sosyal bağlantılar">
-      <a class="pil" href="https://instagram.com/onr.ssz" target="_blank" rel="noreferrer">Instagram <span class="kullanici">@onr.ssz</span></a>
+    <nav class="sosyal" aria-label="Social links">
+      <a class="pil" href="https://instagram.com/coffrimdev" target="_blank" rel="noreferrer">Instagram <span class="kullanici">@coffrimdev</span></a>
+      <a class="pil" href="https://www.tiktok.com/@coffrim.dev" target="_blank" rel="noreferrer">TikTok <span class="kullanici">@coffrim.dev</span></a>
+      <span class="pil pil-pasif">YouTube <span class="kullanici">coming soon</span></span>
       <a class="pil" href="https://discord.com/users/mirm1r" target="_blank" rel="noreferrer">Discord <span class="kullanici">mirm1r</span></a>
       <a class="pil" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">GitHub <span class="kullanici">OnurSessiz</span></a>
-      <a class="pil" href="https://drive.google.com/drive/folders/1JVvqVEBY2fSmMeX9sstKPW4LBXlbsuyz?usp=sharing" target="_blank" rel="noreferrer">Demo Oyunlar <span class="kullanici">google drive</span></a>
+      <a class="pil" href="https://drive.google.com/drive/folders/1JVvqVEBY2fSmMeX9sstKPW4LBXlbsuyz?usp=sharing" target="_blank" rel="noreferrer">Demo Games <span class="kullanici">google drive</span></a>
     </nav>
   </header>
 
@@ -571,10 +575,10 @@ html:has(.modal[open]) { overflow: hidden; }
     <section id="notlar" class="acilir" aria-labelledby="notlar-baslik">
       <div class="ayrac" aria-hidden="true"></div>
       <div class="bolum-bas">
-        <div class="bolum-sol"><h2 id="notlar-baslik">Notlar</h2></div>
-        <p class="meta">yana kaydır · son 30 gün</p>
+        <div class="bolum-sol"><h2 id="notlar-baslik">Notes</h2></div>
+        <p class="meta">scroll sideways · last 30 days</p>
       </div>
-      <div class="ray" id="not-rayi" tabindex="0" role="group" aria-label="Notlar, yana kaydırılabilir" aria-busy="true">
+      <div class="ray" id="not-rayi" tabindex="0" role="group" aria-label="Notes, scrollable sideways" aria-busy="true">
         <div class="not iskelet" aria-hidden="true"><span class="s-ad"></span><span class="s-satir"></span><span class="s-satir"></span><span class="s-satir"></span></div>
         <div class="not iskelet" aria-hidden="true"><span class="s-ad"></span><span class="s-satir"></span><span class="s-satir"></span><span class="s-satir"></span></div>
         <div class="not iskelet" aria-hidden="true"><span class="s-ad"></span><span class="s-satir"></span><span class="s-satir"></span><span class="s-satir"></span></div>
@@ -586,14 +590,14 @@ html:has(.modal[open]) { overflow: hidden; }
       <div class="bolum-bas">
         <div class="bolum-sol">
           <img class="bolum-ikon" src="assets/img/ikon-kareler.webp" alt="" width="88" height="48" loading="lazy" decoding="async">
-          <h2 id="kareler-baslik">Kareler</h2>
+          <h2 id="kareler-baslik">Snapshots</h2>
         </div>
-        <p class="meta">voleybol · selfie · günlük</p>
+        <p class="meta">volleyball · selfies · everyday</p>
       </div>
       <div class="kareler">
-        <div class="kare"><img src="assets/img/kare-1.webp" alt="Voleybol maçından bir kare" width="606" height="606" loading="lazy" decoding="async"></div>
+        <div class="kare"><img src="assets/img/kare-1.webp" alt="A moment from a volleyball match" width="606" height="606" loading="lazy" decoding="async"></div>
         <div class="kare"><img src="assets/img/kare-2.webp" alt="Selfie" width="485" height="606" loading="lazy" decoding="async"></div>
-        <div class="kare"><img src="assets/img/kare-3.webp" alt="Antrenmandan bir kare" width="606" height="280" loading="lazy" decoding="async"></div>
+        <div class="kare"><img src="assets/img/kare-3.webp" alt="A moment from training" width="606" height="280" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
@@ -601,40 +605,40 @@ html:has(.modal[open]) { overflow: hidden; }
       <div class="bolum-bas" style="margin-top:62px">
         <div class="bolum-sol">
           <img class="bolum-ikon" src="assets/img/ikon-projeler.webp" alt="" width="88" height="48" loading="lazy" decoding="async">
-          <h2 id="projeler-baslik">Projeler</h2>
+          <h2 id="projeler-baslik">Projects</h2>
         </div>
-        <p class="meta">detay için tıkla</p>
+        <p class="meta">click for details</p>
       </div>
 
       <div class="grup acilir">
         <div class="grup-bas">
-          <h3 class="grup-ad">Oyunlar</h3>
+          <h3 class="grup-ad">Games</h3>
           <span class="grup-cizgi" aria-hidden="true"></span>
-          <span class="grup-adet">1 proje</span>
+          <span class="grup-adet">1 project</span>
         </div>
         <div class="projeler tek">
           <article class="proje genis">
-            <div class="proje-kapak"><img src="assets/img/proje-1-kapak.webp" alt="CatWando kapak görseli" width="602" height="338" loading="lazy" decoding="async"></div>
+            <div class="proje-kapak"><img src="assets/img/proje-1-kapak.webp" alt="CatWando cover art" width="602" height="338" loading="lazy" decoding="async"></div>
             <div class="proje-govde">
               <div class="proje-ust">
                 <h4><button class="proje-ac" type="button" data-detay="detay-catwando" aria-haspopup="dialog">CatWando</button></h4>
-                <span class="proje-yil">Ağustos 2026</span>
+                <span class="proje-yil">August 2026</span>
               </div>
-              <p class="proje-ozet">72 saatten kısa bir süre de solo dev. olarak hazırladığım öğrenme sürecim için bir demo</p>
-              <ul class="etiketler"><li class="etiket">oyun geliştirme</li><li class="etiket">3d</li></ul>
-              <p class="proje-cta" aria-hidden="true">detayları gör ▸</p>
+              <p class="proje-ozet">A solo-built demo, put together in under 72 hours as part of my learning process.</p>
+              <ul class="etiketler"><li class="etiket">game development</li><li class="etiket">3d</li></ul>
+              <p class="proje-cta" aria-hidden="true">view details ▸</p>
             </div>
             <template id="detay-catwando">
-              <p class="modal-ust">Ağustos 2026 · devam ediyor</p>
+              <p class="modal-ust">August 2026 · in progress</p>
               <h3>CatWando</h3>
-              <p class="modal-metin">0'dan oluşturulan bir kedi modeli ve animasyonlarla yapılmış bir dövüş oyunu daha önce hiç gamejam e katılmadım ama hevesim vardı bu yüzden kendime 72 saatte bitirme challange'ı koymuştum.</p>
-              <ul class="etiketler"><li class="etiket">oyun geliştirme</li><li class="etiket">3d</li></ul>
+              <p class="modal-metin">A fighting game built around a cat character I modelled and animated entirely from scratch. I had never taken part in a game jam before, but the idea appealed to me — so I set myself the challenge of finishing it within 72 hours.</p>
+              <ul class="etiketler"><li class="etiket">game development</li><li class="etiket">3d</li></ul>
               <div class="modal-shots">
-                <div><img src="assets/img/proje-1-shot-1.webp" alt="CatWando oynanış görüntüsü" width="480" height="270" loading="lazy" decoding="async"></div>
-                <div><img src="assets/img/proje-1-shot-2.webp" alt="CatWando seviye tasarımı" width="480" height="266" loading="lazy" decoding="async"></div>
-                <div><img src="assets/img/proje-1-shot-3.webp" alt="CatWando detay görseli" width="480" height="259" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-1-shot-1.webp" alt="CatWando gameplay" width="480" height="270" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-1-shot-2.webp" alt="CatWando level design" width="480" height="266" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-1-shot-3.webp" alt="CatWando detail shot" width="480" height="259" loading="lazy" decoding="async"></div>
               </div>
-              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">projeye git</a>
+              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">view project</a>
             </template>
           </article>
         </div>
@@ -642,32 +646,32 @@ html:has(.modal[open]) { overflow: hidden; }
 
       <div class="grup acilir">
         <div class="grup-bas">
-          <h3 class="grup-ad">Pluginler</h3>
+          <h3 class="grup-ad">Plugins</h3>
           <span class="grup-cizgi" aria-hidden="true"></span>
-          <span class="grup-adet">1 proje</span>
+          <span class="grup-adet">1 project</span>
         </div>
         <div class="projeler tek">
           <article class="proje genis ters">
-            <div class="proje-kapak"><img src="assets/img/proje-2-kapak.webp" alt="Minecraft Economy Plugin kapak görseli" width="602" height="553" loading="lazy" decoding="async"></div>
+            <div class="proje-kapak"><img src="assets/img/proje-2-kapak.webp" alt="Minecraft Economy Plugin cover art" width="602" height="553" loading="lazy" decoding="async"></div>
             <div class="proje-govde">
               <div class="proje-ust">
                 <h4><button class="proje-ac" type="button" data-detay="detay-economy" aria-haspopup="dialog">Minecraft Economy Plugin</button></h4>
                 <span class="proje-yil">2025</span>
               </div>
-              <p class="proje-ozet">Yazdığım ilk plugin henüz yarım ama bir gün devam edicek...</p>
+              <p class="proje-ozet">My first plugin. Still unfinished — but I will come back to it one day.</p>
               <ul class="etiketler"><li class="etiket">java</li><li class="etiket">spigot</li><li class="etiket">minecraft</li></ul>
-              <p class="proje-cta" aria-hidden="true">detayları gör ▸</p>
+              <p class="proje-cta" aria-hidden="true">view details ▸</p>
             </div>
             <template id="detay-economy">
-              <p class="modal-ust">2025 · tamamlandı</p>
+              <p class="modal-ust">2025 · on hold</p>
               <h3>Minecraft Economy Plugin</h3>
-              <p class="modal-metin">Aslında benim ilk yazdığım gerçek projeydi diyebilirim java mı geliştirmek ve kütüphane kurcalamak gibi yetenekleri edinmemi sağladı benim için özel bir yeri var bir gün devam edicem</p>
+              <p class="modal-metin">This was the first real project I ever wrote. It is where I learned to work in Java and to dig into libraries properly, which is why it still holds a special place for me. I fully intend to pick it back up.</p>
               <ul class="etiketler"><li class="etiket">java</li><li class="etiket">spigot</li><li class="etiket">minecraft</li></ul>
               <div class="modal-shots">
-                <div><img src="assets/img/proje-2-shot-1.webp" alt="Oyun içi görüntü" width="480" height="441" loading="lazy" decoding="async"></div>
-                <div><img src="assets/img/proje-2-shot-2.webp" alt="Komut ekranı" width="480" height="441" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-2-shot-1.webp" alt="In-game view" width="480" height="441" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-2-shot-2.webp" alt="Command console" width="480" height="441" loading="lazy" decoding="async"></div>
               </div>
-              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">github'da gör</a>
+              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">view on github</a>
             </template>
           </article>
         </div>
@@ -675,32 +679,32 @@ html:has(.modal[open]) { overflow: hidden; }
 
       <div class="grup acilir">
         <div class="grup-bas">
-          <h3 class="grup-ad">Uygulamalar</h3>
+          <h3 class="grup-ad">Applications</h3>
           <span class="grup-cizgi" aria-hidden="true"></span>
-          <span class="grup-adet">1 proje</span>
+          <span class="grup-adet">1 project</span>
         </div>
         <div class="projeler tek">
           <article class="proje genis">
-            <div class="proje-kapak"><img src="assets/img/proje-3-kapak.webp" alt="Koçun Sensin kapak görseli" width="602" height="328" loading="lazy" decoding="async"></div>
+            <div class="proje-kapak"><img src="assets/img/proje-3-kapak.webp" alt="Koçun Sensin cover art" width="602" height="328" loading="lazy" decoding="async"></div>
             <div class="proje-govde">
               <div class="proje-ust">
                 <h4><button class="proje-ac" type="button" data-detay="detay-kocun" aria-haspopup="dialog">Koçun Sensin</button></h4>
-                <span class="proje-yil">Temmuz 2026</span>
+                <span class="proje-yil">July 2026</span>
               </div>
-              <p class="proje-ozet">Bir kişisel takip ve tracker uygulaması</p>
-              <ul class="etiketler"><li class="etiket">uygulama</li><li class="etiket">arayüz</li></ul>
-              <p class="proje-cta" aria-hidden="true">detayları gör ▸</p>
+              <p class="proje-ozet">A personal habit tracking and coaching application.</p>
+              <ul class="etiketler"><li class="etiket">app</li><li class="etiket">interface</li></ul>
+              <p class="proje-cta" aria-hidden="true">view details ▸</p>
             </div>
             <template id="detay-kocun">
-              <p class="modal-ust">Temmuz 2026 · tamamlandı</p>
+              <p class="modal-ust">July 2026 · completed</p>
               <h3>Koçun Sensin</h3>
-              <p class="modal-metin">Kişinin kendi ders çalışma , spor yapma ve kitap okuma gibi alışkanlıklarını kayıt altında tutup yapay zeka ile beraber koçluk alabileceği bir kişisel tracker ve koçluk uygulaması.</p>
-              <ul class="etiketler"><li class="etiket">uygulama</li><li class="etiket">arayüz</li></ul>
+              <p class="modal-metin">Koçun Sensin (“You Are the Coach”) is a personal tracker and coaching app. It lets you keep a record of habits such as studying, training and reading, then draws on that record to offer AI-assisted coaching.</p>
+              <ul class="etiketler"><li class="etiket">app</li><li class="etiket">interface</li></ul>
               <div class="modal-shots">
-                <div><img src="assets/img/proje-3-shot-1.webp" alt="Uygulama arayüzü" width="480" height="297" loading="lazy" decoding="async"></div>
-                <div><img src="assets/img/proje-3-shot-2.webp" alt="Uygulamadan detay görsel" width="480" height="337" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-3-shot-1.webp" alt="Application interface" width="480" height="297" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-3-shot-2.webp" alt="Detail from the application" width="480" height="337" loading="lazy" decoding="async"></div>
               </div>
-              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">kaynak kod</a>
+              <a class="dugme" href="https://github.com/OnurSessiz" target="_blank" rel="noreferrer">source code</a>
             </template>
           </article>
         </div>
@@ -715,12 +719,12 @@ html:has(.modal[open]) { overflow: hidden; }
       <div>
         <div class="alt-bas">
           <img class="bolum-ikon" src="assets/img/ikon-iletisim.webp" alt="" width="88" height="48" loading="lazy" decoding="async">
-          <h2>İletişim</h2>
+          <h2>Contact</h2>
         </div>
         <div class="iletisim">
           <a href="mailto:onursessiz4@gmail.com">onursessiz4@gmail.com</a>
           <span>discord: mirm1r</span>
-          <span>Türkiye / İstanbul</span>
+          <span>Istanbul, Türkiye</span>
         </div>
       </div>
       <p class="telif">© 2026 onur sessiz</p>
@@ -731,7 +735,7 @@ html:has(.modal[open]) { overflow: hidden; }
 
 <dialog class="modal" id="detay">
   <div class="modal-icerik"></div>
-  <button class="modal-kapat" type="button" data-kapat autofocus>kapat ✕</button>
+  <button class="modal-kapat" type="button" data-kapat autofocus>close ✕</button>
 </dialog>
 
 <script>
@@ -785,7 +789,7 @@ html:has(.modal[open]) { overflow: hidden; }
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'afis-nokta';
-      b.setAttribute('aria-label', (k + 1) + '. afiş');
+      b.setAttribute('aria-label', 'Banner ' + (k + 1));
       b.addEventListener('click', function () { git(k); });
       kutu.appendChild(b);
       return b;
@@ -870,17 +874,17 @@ html:has(.modal[open]) { overflow: hidden; }
   });
 
   /* ── notlar ──────────────────────────────────────────────────────── */
-  var AYLAR = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  var AYLAR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var GUN   = 86400000;
   var ray   = document.getElementById('not-rayi');
 
   function neZaman(ts, simdi) {
     var gun = Math.floor((simdi - ts) / GUN);
-    if (gun <= 0) return 'bugün';
-    if (gun === 1) return 'dün';
-    if (gun < 7)  return gun + ' gün önce';
+    if (gun <= 0) return 'today';
+    if (gun === 1) return 'yesterday';
+    if (gun < 7)  return gun + ' days ago';
     var d = new Date(ts);
-    return d.getDate() + ' ' + AYLAR[d.getMonth()];
+    return AYLAR[d.getMonth()] + ' ' + d.getDate();
   }
 
   function kart(not) {
@@ -919,7 +923,7 @@ html:has(.modal[open]) { overflow: hidden; }
 
   function ciz(liste) {
     ray.setAttribute('aria-busy', 'false');
-    if (!liste.length) { ray.replaceChildren(bosDurum('şimdilik not yok.')); }
+    if (!liste.length) { ray.replaceChildren(bosDurum('no notes yet.')); }
     else { ray.replaceChildren.apply(ray, liste.map(kart)); }
     tasmaBak();
   }
@@ -936,7 +940,7 @@ html:has(.modal[open]) { overflow: hidden; }
       var liste = ham.map(function (n) {
           var t = Date.parse((n && n.date) || '');
           return {
-            title: (n && n.title) || 'not',
+            title: (n && n.title) || 'note',
             body:  String((n && n.text) || ''),
             ts:    isNaN(t) ? simdi : t
           };
