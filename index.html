@@ -648,10 +648,33 @@ html:has(.modal[open]) { overflow: hidden; }
         <div class="grup-bas">
           <h3 class="grup-ad">Plugins</h3>
           <span class="grup-cizgi" aria-hidden="true"></span>
-          <span class="grup-adet">1 project</span>
+          <span class="grup-adet">2 projects</span>
         </div>
         <div class="projeler tek">
           <article class="proje genis ters">
+            <div class="proje-kapak"><img src="assets/img/proje-4-kapak.webp" alt="TakashiDungeons cover art" width="602" height="339" loading="lazy" decoding="async"></div>
+            <div class="proje-govde">
+              <div class="proje-ust">
+                <h4><button class="proje-ac" type="button" data-detay="detay-takashi" aria-haspopup="dialog">TakashiDungeons</button></h4>
+                <span class="proje-yil">August 2026</span>
+              </div>
+              <p class="proje-ozet">Procedural dungeon generation for Paper servers. The rooms are hand-built; the layout is not.</p>
+              <ul class="etiketler"><li class="etiket">java</li><li class="etiket">paper</li><li class="etiket">minecraft</li></ul>
+              <p class="proje-cta" aria-hidden="true">view details ▸</p>
+            </div>
+            <template id="detay-takashi">
+              <p class="modal-ust">August 2026 · in progress</p>
+              <h3>TakashiDungeons</h3>
+              <p class="modal-metin">Most random-dungeon plugins generate the rooms themselves and end up with caves or plain rectangles. This one does not generate rooms at all: they are schematics drawn by hand, and the engine only decides which room goes where and at what angle — the same approach Mojang uses for villages and trial chambers. The generation core is finished and verified on a live server; mobs, loot and parties are the phases after it. It is GPLv3 and I am building it in the open.</p>
+              <ul class="etiketler"><li class="etiket">java</li><li class="etiket">paper</li><li class="etiket">minecraft</li></ul>
+              <div class="modal-shots">
+                <div><img src="assets/img/proje-4-shot-1.webp" alt="Inside a generated dungeon room" width="480" height="270" loading="lazy" decoding="async"></div>
+                <div><img src="assets/img/proje-4-shot-2.webp" alt="A generated dungeon seen from outside" width="480" height="270" loading="lazy" decoding="async"></div>
+              </div>
+              <a class="dugme" href="https://github.com/OnurSessiz/TakashiDungeonsPlugin" target="_blank" rel="noreferrer">view on github</a>
+            </template>
+          </article>
+          <article class="proje genis">
             <div class="proje-kapak"><img src="assets/img/proje-2-kapak.webp" alt="Minecraft Economy Plugin cover art" width="602" height="553" loading="lazy" decoding="async"></div>
             <div class="proje-govde">
               <div class="proje-ust">
@@ -684,7 +707,7 @@ html:has(.modal[open]) { overflow: hidden; }
           <span class="grup-adet">1 project</span>
         </div>
         <div class="projeler tek">
-          <article class="proje genis">
+          <article class="proje genis ters">
             <div class="proje-kapak"><img src="assets/img/proje-3-kapak.webp" alt="Koçun Sensin cover art" width="602" height="328" loading="lazy" decoding="async"></div>
             <div class="proje-govde">
               <div class="proje-ust">
